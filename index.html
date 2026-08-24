@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +11,6 @@
 content="Hand-drawn architectural sketches, perspective drawings and custom designs.">
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -44,28 +40,21 @@ select {
     font-family: inherit;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     background: rgba(244,241,235,0.95);
     backdrop-filter: blur(12px);
-
     border-bottom: 1px solid #ddd6ca;
 }
 
 .navbar {
     max-width: 1150px;
     margin: auto;
-
     padding: 18px 25px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,7 +78,7 @@ header {
 }
 
 .nav-links a:hover {
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .menu-button {
@@ -100,10 +89,7 @@ header {
     cursor: pointer;
 }
 
-
-/* =========================
-   GENERAL
-========================= */
+/* GENERAL */
 
 .container {
     max-width: 1150px;
@@ -126,53 +112,38 @@ section {
     margin-bottom: 35px;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 700px;
-
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-
+    grid-template-columns: 1.1fr .9fr;
     gap: 60px;
     align-items: center;
 }
 
 .tag {
     display: inline-block;
-
     background: #171717;
     color: white;
-
     padding: 8px 13px;
-
     border-radius: 50px;
-
     font-size: 12px;
     font-weight: 800;
-
     margin-bottom: 22px;
 }
 
 .hero h1 {
     font-size: clamp(55px, 8vw, 90px);
-
-    line-height: 0.92;
+    line-height: .92;
     letter-spacing: -5px;
-
     margin-bottom: 28px;
 }
 
 .hero p {
     max-width: 600px;
-
     color: #625e58;
-
     font-size: 19px;
-
     margin-bottom: 32px;
 }
 
@@ -184,19 +155,13 @@ section {
 
 .btn {
     display: inline-block;
-
     padding: 15px 22px;
-
     border-radius: 10px;
-
     background: #171717;
     color: white;
-
     font-weight: 800;
-
     border: 2px solid #171717;
-
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .btn:hover {
@@ -208,184 +173,99 @@ section {
     color: #171717;
 }
 
-
-/* =========================
-   HERO ART
-========================= */
+/* HERO ART */
 
 .hero-art {
     min-height: 480px;
-
     border-radius: 20px;
-
     background:
-        linear-gradient(
-            135deg,
-            transparent 49%,
-            #999 50%,
-            transparent 51%
-        ),
-        linear-gradient(
-            45deg,
-            transparent 49%,
-            #aaa 50%,
-            transparent 51%
-        ),
+        linear-gradient(135deg, transparent 49%, #999 50%, transparent 51%),
+        linear-gradient(45deg, transparent 49%, #aaa 50%, transparent 51%),
         #ded9cf;
-
     background-size: 150px 150px;
-
     border: 1px solid #c9c1b5;
-
     box-shadow: 12px 15px 0 #171717;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-art-text {
-    background: rgba(244,241,235,0.9);
-
+    background: rgba(244,241,235,.9);
     padding: 20px;
-
     font-weight: 900;
-
     letter-spacing: 4px;
-
     transform: rotate(-5deg);
 }
 
-
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 
 .gallery {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .sketch-card {
     background: white;
-
     border: 1px solid #ddd6ca;
-
     border-radius: 16px;
-
     overflow: hidden;
-
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .sketch-card:hover {
     transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,0.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
 }
-
-
-/* =========================
-   SKETCH PREVIEW
-========================= */
 
 .sketch-preview {
     position: relative;
-
     width: 100%;
     height: 280px;
-
     overflow: hidden;
-
     background: #ddd8cf;
-
-    /* Prevent selecting the preview */
     user-select: none;
     -webkit-user-select: none;
-
-    /* Prevent touch hold actions */
     -webkit-touch-callout: none;
 }
 
 .sketch-preview img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
-
     user-select: none;
     -webkit-user-select: none;
-
     -webkit-user-drag: none;
-
     pointer-events: none;
 }
 
-
-/* =========================
-   WATERMARK
-========================= */
-
 .watermark {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-25deg);
-
-    color: rgba(255,255,255,0.60);
-
+    transform: translate(-50%,-50%) rotate(-25deg);
+    color: rgba(255,255,255,.60);
     font-size: 28px;
-
     font-weight: 900;
-
     letter-spacing: 4px;
-
     white-space: nowrap;
-
     pointer-events: none;
-
-    user-select: none;
-
-    text-shadow:
-        1px 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 4px rgba(0,0,0,.5);
 }
 
 .watermark-small {
     position: absolute;
-
     right: 12px;
     bottom: 10px;
-
-    color: rgba(255,255,255,0.8);
-
+    color: rgba(255,255,255,.8);
     font-size: 11px;
-
     font-weight: 900;
-
     letter-spacing: 1px;
-
     pointer-events: none;
-
-    text-shadow:
-        1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 }
-
-
-/* =========================
-   SKETCH INFO
-========================= */
 
 .sketch-info {
     padding: 20px;
@@ -403,51 +283,35 @@ section {
 
 .price {
     margin-top: 12px;
-
     font-size: 18px;
     font-weight: 900;
 }
 
-
-/* =========================
-   HOW IT WORKS
-========================= */
+/* HOW IT WORKS */
 
 .steps {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .step {
     background: white;
-
     border: 1px solid #ddd6ca;
-
     border-radius: 16px;
-
     padding: 28px;
 }
 
 .step-number {
     width: 45px;
     height: 45px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     background: #171717;
     color: white;
-
     border-radius: 50%;
-
     font-weight: 900;
-
     margin-bottom: 20px;
 }
 
@@ -459,51 +323,34 @@ section {
     color: #6d6962;
 }
 
-
-/* =========================
-   PRICING
-========================= */
+/* PRICING */
 
 .pricing {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .plan {
     background: white;
-
     border: 1px solid #ddd6ca;
-
     border-radius: 16px;
-
     padding: 30px;
 }
 
 .plan.featured {
     border: 2px solid #171717;
-
     transform: translateY(-8px);
 }
 
 .popular {
     display: inline-block;
-
     background: #171717;
-
     color: white;
-
     padding: 6px 10px;
-
     border-radius: 20px;
-
     font-size: 11px;
-
     font-weight: 900;
-
     margin-bottom: 12px;
 }
 
@@ -513,15 +360,12 @@ section {
 
 .amount {
     font-size: 42px;
-
     font-weight: 900;
-
     margin: 12px 0 20px;
 }
 
 .plan ul {
     list-style: none;
-
     color: #68635c;
 }
 
@@ -531,24 +375,16 @@ section {
 
 .plan .btn {
     width: 100%;
-
     text-align: center;
-
     margin-top: 20px;
 }
 
-
-/* =========================
-   ORDER
-========================= */
+/* ORDER */
 
 .order-box {
     background: #171717;
-
     color: white;
-
     border-radius: 20px;
-
     padding: 45px;
 }
 
@@ -562,19 +398,14 @@ section {
 
 .order-form {
     max-width: 700px;
-
     display: grid;
-
     gap: 14px;
 }
 
 .order-form label {
     display: block;
-
     font-weight: 700;
-
     font-size: 14px;
-
     margin-bottom: 5px;
 }
 
@@ -582,138 +413,86 @@ section {
 .order-form textarea,
 .order-form select {
     width: 100%;
-
     padding: 15px;
-
     border: none;
-
     border-radius: 9px;
-
     outline: none;
-
     background: white;
-
     color: #171717;
 }
 
 .order-form textarea {
     min-height: 140px;
-
     resize: vertical;
 }
 
 .submit-button {
     padding: 15px;
-
     border: none;
-
     border-radius: 9px;
-
     background: white;
-
     color: #171717;
-
     font-weight: 900;
-
     cursor: pointer;
-
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .submit-button:hover {
     transform: translateY(-2px);
 }
 
-
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .whatsapp {
     position: fixed;
-
     right: 22px;
     bottom: 22px;
-
     z-index: 999;
-
     background: #25D366;
-
     color: white;
-
     padding: 14px 18px;
-
     border-radius: 50px;
-
     font-weight: 900;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.2);
-
-    transition: 0.2s;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    transition: .2s;
 }
 
 .whatsapp:hover {
     transform: scale(1.05);
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     border-top: 1px solid #ddd6ca;
-
     padding: 35px 20px;
-
     text-align: center;
-
     color: #777169;
-
     font-size: 14px;
 }
 
-
-/* =========================
-   NOTIFICATION
-========================= */
+/* NOTIFICATION */
 
 .notification {
     position: fixed;
-
     left: 50%;
     bottom: 25px;
-
-    transform:
-        translate(-50%,100px);
-
+    transform: translate(-50%,100px);
     background: #171717;
-
     color: white;
-
     padding: 15px 22px;
-
     border-radius: 10px;
-
     opacity: 0;
-
-    transition: 0.3s;
-
+    transition: .3s;
     z-index: 2000;
 }
 
 .notification.show {
-    transform:
-        translate(-50%,0);
-
+    transform: translate(-50%,0);
     opacity: 1;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width:800px) {
 
@@ -723,23 +502,15 @@ footer {
 
     .nav-links {
         display: none;
-
         position: absolute;
-
         top: 70px;
         left: 0;
         right: 0;
-
         background: #f4f1eb;
-
         padding: 25px;
-
         flex-direction: column;
-
         gap: 20px;
-
-        border-bottom:
-            1px solid #ddd6ca;
+        border-bottom: 1px solid #ddd6ca;
     }
 
     .nav-links.open {
@@ -748,7 +519,6 @@ footer {
 
     .hero {
         grid-template-columns: 1fr;
-
         padding-top: 55px;
     }
 
@@ -774,76 +544,33 @@ footer {
         font-size: 21px;
     }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
 <nav class="navbar">
 
-<a href="#" class="logo">
-GHANDOUR SKETCHES
-</a>
+<a href="#" class="logo">GHANDOUR SKETCHES</a>
 
-<button
-class="menu-button"
-id="menuButton"
-aria-label="Open menu">
-
+<button class="menu-button" id="menuButton" aria-label="Open menu">
 ☰
-
 </button>
 
-<ul
-class="nav-links"
-id="navLinks">
-
-<li>
-<a href="#gallery">Gallery</a>
-</li>
-
-<li>
-<a href="#how">How it works</a>
-</li>
-
-<li>
-<a href="#prices">Prices</a>
-</li>
-
-<li>
-<a href="#order">Order</a>
-</li>
-
+<ul class="nav-links" id="navLinks">
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#how">How it works</a></li>
+<li><a href="#prices">Prices</a></li>
+<li><a href="#order">Order</a></li>
 </ul>
 
 </nav>
-
 </header>
-
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <main>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section>
-
 <div class="container hero">
 
 <div>
@@ -866,43 +593,26 @@ designs made for people who want something unique.
 
 <div class="buttons">
 
-<a
-href="#order"
-class="btn">
-
+<a href="#order" class="btn">
 Order a sketch
-
 </a>
 
-<a
-href="#gallery"
-class="btn btn-light">
-
+<a href="#gallery" class="btn btn-light">
 See my work
-
 </a>
 
 </div>
 
 </div>
-
 
 <div class="hero-art">
-
 <div class="hero-art-text">
 YOUR SKETCH
 </div>
-
 </div>
 
 </div>
-
 </section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
 
 <section id="gallery">
 
@@ -916,21 +626,14 @@ Featured sketches
 Preview my architectural artwork.
 </p>
 
-
 <div class="gallery">
-
-
-<!-- SKETCH 1 -->
 
 <article class="sketch-card">
 
 <div class="sketch-preview">
-
-<img
-src="sketch1-preview.jpg"
+<img src="sketch1-preview.jpg"
 alt="Modern Villa architectural sketch"
-draggable="false"
->
+draggable="false">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -939,39 +642,27 @@ GHANDOUR SKETCHES
 <div class="watermark-small">
 PREVIEW • © 2026
 </div>
-
 </div>
 
 <div class="sketch-info">
 
-<h3>
-Modern Villa
-</h3>
+<h3>Modern Villa</h3>
 
 <p>
 Detailed two-point perspective architectural drawing.
 </p>
 
-<div class="price">
-$10
-</div>
+<div class="price">$10</div>
 
 </div>
-
 </article>
-
-
-<!-- SKETCH 2 -->
 
 <article class="sketch-card">
 
 <div class="sketch-preview">
-
-<img
-src="sketch2-preview.jpg"
+<img src="sketch2-preview.jpg"
 alt="Luxury Interior architectural sketch"
-draggable="false"
->
+draggable="false">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -980,39 +671,27 @@ GHANDOUR SKETCHES
 <div class="watermark-small">
 PREVIEW • © 2026
 </div>
-
 </div>
 
 <div class="sketch-info">
 
-<h3>
-Luxury Interior
-</h3>
+<h3>Luxury Interior</h3>
 
 <p>
 Detailed interior perspective drawing.
 </p>
 
-<div class="price">
-$10
-</div>
+<div class="price">$10</div>
 
 </div>
-
 </article>
-
-
-<!-- SKETCH 3 -->
 
 <article class="sketch-card">
 
 <div class="sketch-preview">
-
-<img
-src="sketch3-preview.jpg"
+<img src="sketch3-preview.jpg"
 alt="Dream House architectural sketch"
-draggable="false"
->
+draggable="false">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -1021,38 +700,24 @@ GHANDOUR SKETCHES
 <div class="watermark-small">
 PREVIEW • © 2026
 </div>
-
 </div>
 
 <div class="sketch-info">
 
-<h3>
-Dream House
-</h3>
+<h3>Dream House</h3>
 
 <p>
 Custom house concept drawn by hand.
 </p>
 
-<div class="price">
-$15
-</div>
+<div class="price">$15</div>
 
 </div>
-
 </article>
 
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- =========================
-     HOW IT WORKS
-========================= -->
 
 <section id="how">
 
@@ -1066,19 +731,13 @@ How it works
 Getting a custom sketch is simple.
 </p>
 
-
 <div class="steps">
-
 
 <div class="step">
 
-<div class="step-number">
-1
-</div>
+<div class="step-number">1</div>
 
-<h3>
-Send your idea
-</h3>
+<h3>Send your idea</h3>
 
 <p>
 Tell me what you want drawn or send
@@ -1087,16 +746,11 @@ a reference photo.
 
 </div>
 
-
 <div class="step">
 
-<div class="step-number">
-2
-</div>
+<div class="step-number">2</div>
 
-<h3>
-I draw it
-</h3>
+<h3>I draw it</h3>
 
 <p>
 Your idea is turned into a detailed
@@ -1105,16 +759,11 @@ hand-drawn architectural sketch.
 
 </div>
 
-
 <div class="step">
 
-<div class="step-number">
-3
-</div>
+<div class="step-number">3</div>
 
-<h3>
-Receive your artwork
-</h3>
+<h3>Receive your artwork</h3>
 
 <p>
 Receive your finished drawing and
@@ -1123,17 +772,9 @@ a digital copy.
 
 </div>
 
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- =========================
-     PRICING
-========================= -->
 
 <section id="prices">
 
@@ -1147,38 +788,25 @@ Simple pricing
 Choose the level of detail you want.
 </p>
 
-
 <div class="pricing">
-
 
 <div class="plan">
 
-<h3>
-Starter
-</h3>
+<h3>Starter</h3>
 
-<div class="amount">
-$5
-</div>
+<div class="amount">$5</div>
 
 <ul>
-
 <li>✓ Simple architectural sketch</li>
 <li>✓ A4 drawing</li>
 <li>✓ Digital photo</li>
-
 </ul>
 
-<a
-href="#order"
-class="btn">
-
+<a href="#order" class="btn">
 Choose Starter
-
 </a>
 
 </div>
-
 
 <div class="plan featured">
 
@@ -1186,74 +814,45 @@ Choose Starter
 MOST POPULAR
 </span>
 
-<h3>
-Detailed
-</h3>
+<h3>Detailed</h3>
 
-<div class="amount">
-$10
-</div>
+<div class="amount">$10</div>
 
 <ul>
-
 <li>✓ Detailed architecture</li>
 <li>✓ A4 drawing</li>
 <li>✓ High-quality digital copy</li>
 <li>✓ Extra perspective details</li>
-
 </ul>
 
-<a
-href="#order"
-class="btn">
-
+<a href="#order" class="btn">
 Choose Detailed
-
 </a>
 
 </div>
 
-
 <div class="plan">
 
-<h3>
-Premium
-</h3>
+<h3>Premium</h3>
 
-<div class="amount">
-$20
-</div>
+<div class="amount">$20</div>
 
 <ul>
-
 <li>✓ Complex perspective</li>
 <li>✓ Extra architectural details</li>
 <li>✓ High-quality digital copy</li>
 <li>✓ Maximum detail</li>
-
 </ul>
 
-<a
-href="#order"
-class="btn">
-
+<a href="#order" class="btn">
 Choose Premium
-
 </a>
 
 </div>
 
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- =========================
-     ORDER
-========================= -->
 
 <section id="order">
 
@@ -1269,90 +868,51 @@ Order a custom sketch
 Tell me what you want drawn and I'll get back to you.
 </p>
 
+<form class="order-form" id="orderForm">
 
-<form
-class="order-form"
-id="orderForm">
+<label for="name">Your name</label>
 
-
-<label for="name">
-Your name
-</label>
-
-<input
-id="name"
+<input id="name"
 type="text"
 placeholder="Your name"
-required
->
+required>
 
+<label for="email">Your email</label>
 
-<label for="email">
-Your email
-</label>
-
-<input
-id="email"
+<input id="email"
 type="email"
 placeholder="your@email.com"
-required
->
+required>
 
-
-<label for="package">
-Package
-</label>
+<label for="package">Package</label>
 
 <select id="package">
 
-<option>
-Starter — $5
-</option>
-
-<option selected>
-Detailed — $10
-</option>
-
-<option>
-Premium — $20
-</option>
+<option>Starter — $5</option>
+<option selected>Detailed — $10</option>
+<option>Premium — $20</option>
 
 </select>
-
 
 <label for="idea">
 What should I draw?
 </label>
 
-<textarea
-id="idea"
+<textarea id="idea"
 placeholder="Example: A modern two-story house with large windows, stairs and a garage..."
-required>
-</textarea>
+required></textarea>
 
-
-<button
-type="submit"
-class="submit-button">
-
+<button type="submit" class="submit-button">
 Send Order Request
-
 </button>
 
 </form>
 
 </div>
-
 </div>
-
 </section>
 
 </main>
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
 
 <a
 class="whatsapp"
@@ -1360,15 +920,8 @@ id="whatsappButton"
 href="#"
 target="_blank"
 rel="noopener">
-
 WhatsApp Me
-
 </a>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
@@ -1381,25 +934,13 @@ Hand-drawn architectural art.
 
 </footer>
 
-
-<!-- =========================
-     NOTIFICATION
-========================= -->
-
-<div
-class="notification"
-id="notification">
-
+<div class="notification" id="notification">
 Order request prepared!
-
 </div>
-
 
 <script>
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 const menuButton =
 document.getElementById("menuButton");
@@ -1407,44 +948,28 @@ document.getElementById("menuButton");
 const navLinks =
 document.getElementById("navLinks");
 
-menuButton.addEventListener(
-"click",
-function() {
-
-navLinks.classList.toggle("open");
-
-}
-);
-
+menuButton.addEventListener("click", function() {
+    navLinks.classList.toggle("open");
+});
 
 document
 .querySelectorAll(".nav-links a")
 .forEach(function(link) {
 
-link.addEventListener(
-"click",
-function() {
-
-navLinks.classList.remove("open");
-
-}
-);
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("open");
+    });
 
 });
 
 
-/* =========================
-   YEAR
-========================= */
+/* YEAR */
 
-document.getElementById("year")
-.textContent =
+document.getElementById("year").textContent =
 new Date().getFullYear();
 
 
-/* =========================
-   ORDER FORM
-========================= */
+/* ORDER FORM */
 
 const orderForm =
 document.getElementById("orderForm");
@@ -1452,306 +977,193 @@ document.getElementById("orderForm");
 const notification =
 document.getElementById("notification");
 
-orderForm.addEventListener(
-"submit",
-function(event) {
+orderForm.addEventListener("submit", function(event) {
 
-event.preventDefault();
+    event.preventDefault();
 
-const name =
-document.getElementById("name").value;
+    const name =
+    document.getElementById("name").value;
 
-const email =
-document.getElementById("email").value;
+    const email =
+    document.getElementById("email").value;
 
-const packageName =
-document.getElementById("package").value;
+    const packageName =
+    document.getElementById("package").value;
 
-const idea =
-document.getElementById("idea").value;
+    const idea =
+    document.getElementById("idea").value;
 
+    const yourEmail =
+    "k.rami.ghandour9@hotmail.com";
 
-/* YOUR EMAIL */
+    const subject =
+    encodeURIComponent(
+        "New Sketch Order - " + packageName
+    );
 
-const yourEmail =
-"k.rami.ghandour9@hotmail.com";
+    const body =
+    encodeURIComponent(
 
+        "NEW SKETCH ORDER\n\n" +
 
-const subject =
-encodeURIComponent(
-"New Sketch Order - " +
-packageName
-);
+        "Customer name: " +
+        name +
+        "\n\n" +
 
+        "Customer email: " +
+        email +
+        "\n\n" +
 
-const body =
-encodeURIComponent(
+        "Package: " +
+        packageName +
+        "\n\n" +
 
-"NEW SKETCH ORDER\n\n" +
+        "Sketch request:\n" +
+        idea
+    );
 
-"Customer name: " +
-name +
-"\n\n" +
+    const mailtoLink =
+    "mailto:" +
+    yourEmail +
+    "?subject=" +
+    subject +
+    "&body=" +
+    body;
 
-"Customer email: " +
-email +
-"\n\n" +
+    window.location.href =
+    mailtoLink;
 
-"Package: " +
-packageName +
-"\n\n" +
+    notification.classList.add("show");
 
-"Sketch request:\n" +
-idea
+    setTimeout(function() {
 
-);
+        notification.classList.remove("show");
 
-
-const mailtoLink =
-"mailto:" +
-yourEmail +
-"?subject=" +
-subject +
-"&body=" +
-body;
-
-
-window.location.href =
-mailtoLink;
-
-
-notification.classList.add("show");
-
-
-setTimeout(
-function() {
-
-notification.classList.remove("show");
-
-},
-3000
-);
+    }, 3000);
 
 });
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 
-/*
-Replace this with your actual number.
-
-Example:
-96170123456
-
-Do not include:
-+
-spaces
--
-*/
+/* Your Lebanese WhatsApp number */
 
 const whatsappNumber =
-"961XXXXXXXXX";
-
+"96181835567";
 
 const whatsappMessage =
 encodeURIComponent(
-"Hi! I'd like to order a custom architectural sketch."
+    "Hi! I'd like to order a custom architectural sketch."
 );
 
-
-document.getElementById(
-"whatsappButton"
-).href =
-
+document.getElementById("whatsappButton").href =
 "https://wa.me/" +
 whatsappNumber +
 "?text=" +
 whatsappMessage;
 
 
-/* =========================
-   ANTI-COPY PROTECTION
-========================= */
+/* ANTI-COPY PROTECTION */
 
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
 
-/*
-IMPORTANT:
+document.addEventListener("dragstart", function(event) {
 
-This does NOT make screenshots impossible.
+    if (event.target.tagName === "IMG") {
+        event.preventDefault();
+    }
 
-It only makes casual copying/saving harder.
-*/
+});
 
+document.addEventListener("selectstart", function(event) {
 
-/* Disable right-click */
-
-document.addEventListener(
-"contextmenu",
-function(event) {
-
-event.preventDefault();
-
-}
-);
-
-
-/* Prevent dragging images */
-
-document.addEventListener(
-"dragstart",
-function(event) {
-
-if (
-event.target.tagName === "IMG"
-) {
-
-event.preventDefault();
-
-}
-
-}
-);
-
-
-/* Prevent selecting images */
-
-document.addEventListener(
-"selectstart",
-function(event) {
-
-if (
-event.target.tagName === "IMG" ||
-event.target.closest(".sketch-preview")
-) {
-
-event.preventDefault();
-
-}
-
-}
-);
-
-
-/*
-Prevent common save/view-source
-shortcuts.
-
-This is NOT complete security,
-because browsers can be bypassed.
-*/
-
-document.addEventListener(
-"keydown",
-function(event) {
-
-const key =
-event.key.toLowerCase();
-
-
-/* Ctrl+S */
-
-if (
-(event.ctrlKey || event.metaKey) &&
-key === "s"
-) {
-
-event.preventDefault();
-
-}
-
-
-/* Ctrl+U */
-
-if (
-(event.ctrlKey || event.metaKey) &&
-key === "u"
-) {
-
-event.preventDefault();
-
-}
-
-
-/* Ctrl+Shift+I */
-
-if (
-event.ctrlKey &&
-event.shiftKey &&
-key === "i"
-) {
-
-event.preventDefault();
-
-}
-
-
-/* F12 */
-
-if (
-event.key === "F12"
-) {
-
-event.preventDefault();
-
-}
+    if (
+        event.target.tagName === "IMG" ||
+        event.target.closest(".sketch-preview")
+    ) {
+        event.preventDefault();
+    }
 
 });
 
 
-/* =========================
-   PROTECT PREVIEW IMAGES
-========================= */
+/* PREVENT COMMON SHORTCUTS */
+
+document.addEventListener("keydown", function(event) {
+
+    const key =
+    event.key.toLowerCase();
+
+    if (
+        (event.ctrlKey || event.metaKey) &&
+        key === "s"
+    ) {
+        event.preventDefault();
+    }
+
+    if (
+        (event.ctrlKey || event.metaKey) &&
+        key === "u"
+    ) {
+        event.preventDefault();
+    }
+
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        key === "i"
+    ) {
+        event.preventDefault();
+    }
+
+    if (event.key === "F12") {
+        event.preventDefault();
+    }
+
+});
+
+
+/* PROTECT PREVIEW IMAGES */
 
 document
 .querySelectorAll(".sketch-preview img")
 .forEach(function(image) {
 
-image.setAttribute(
-"draggable",
-"false"
-);
+    image.setAttribute("draggable", "false");
 
-image.addEventListener(
-"dragstart",
-function(event) {
-
-event.preventDefault();
-
-});
+    image.addEventListener("dragstart", function(event) {
+        event.preventDefault();
+    });
 
 });
 
 
-/* =========================
-   SMOOTH SCROLL
-========================= */
+/* SMOOTH SCROLL */
 
 document
 .querySelectorAll('a[href^="#"]')
 .forEach(function(anchor) {
 
-anchor.addEventListener(
-"click",
-function(event) {
+    anchor.addEventListener("click", function(event) {
 
-const target =
-document.querySelector(
-this.getAttribute("href")
-);
+        const target =
+        document.querySelector(
+            this.getAttribute("href")
+        );
 
-if (target) {
+        if (target) {
 
-event.preventDefault();
+            event.preventDefault();
 
-target.scrollIntoView({
-behavior: "smooth"
-});
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
 
-}
+        }
 
-});
+    });
 
 });
 
@@ -1759,3 +1171,4 @@ behavior: "smooth"
 
 </body>
 </html>
+```
