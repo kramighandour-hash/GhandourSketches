@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ghandour Sketches | Architectural Art</title>
+<title>Ghandour Sketches | Custom Architectural Sketches</title>
 
 <meta name="description"
-content="Hand-drawn architectural sketches, perspective drawings and custom designs.">
+content="Order custom hand-drawn architectural sketches, houses, interiors and perspective drawings by Ghandour Sketches.">
 
 <style>
 * {
@@ -40,13 +40,35 @@ select {
     font-family: inherit;
 }
 
-/* HEADER */
+.container {
+    width: min(1150px, 100%);
+    margin: auto;
+    padding: 0 25px;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    font-size: clamp(35px, 6vw, 55px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: #6d6962;
+    margin-bottom: 35px;
+}
+
+/* ================= HEADER ================= */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(244,241,235,0.95);
+    background: rgba(244,241,235,.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #ddd6ca;
 }
@@ -54,7 +76,7 @@ header {
 .navbar {
     max-width: 1150px;
     margin: auto;
-    padding: 18px 25px;
+    padding: 17px 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,56 +90,62 @@ header {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 27px;
     list-style: none;
 }
 
 .nav-links a {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .nav-links a:hover {
-    opacity: .5;
+    opacity: .55;
 }
 
 .menu-button {
     display: none;
     background: none;
-    border: none;
+    border: 0;
     font-size: 28px;
     cursor: pointer;
 }
 
-/* GENERAL */
+/* ================= BUTTONS ================= */
 
-.container {
-    max-width: 1150px;
-    margin: auto;
-    padding: 0 25px;
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
 }
 
-section {
-    padding: 90px 0;
+.btn {
+    display: inline-block;
+    padding: 15px 22px;
+    border-radius: 11px;
+    background: #171717;
+    color: white;
+    font-weight: 900;
+    border: 2px solid #171717;
+    transition: .2s;
+    cursor: pointer;
 }
 
-.section-title {
-    font-size: clamp(35px, 5vw, 50px);
-    letter-spacing: -2px;
-    margin-bottom: 10px;
+.btn:hover {
+    transform: translateY(-3px);
 }
 
-.section-subtitle {
-    color: #6d6962;
-    margin-bottom: 35px;
+.btn-light {
+    background: transparent;
+    color: #171717;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
-    min-height: 700px;
+    min-height: 720px;
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: 1.05fr .95fr;
     gap: 60px;
     align-items: center;
 }
@@ -128,14 +156,14 @@ section {
     color: white;
     padding: 8px 13px;
     border-radius: 50px;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 900;
     margin-bottom: 22px;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 8vw, 90px);
-    line-height: .92;
+    font-size: clamp(54px, 8vw, 91px);
+    line-height: .9;
     letter-spacing: -5px;
     margin-bottom: 28px;
 }
@@ -144,90 +172,118 @@ section {
     max-width: 600px;
     color: #625e58;
     font-size: 19px;
-    margin-bottom: 32px;
+    margin-bottom: 31px;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 22px;
-    border-radius: 10px;
-    background: #171717;
-    color: white;
-    font-weight: 800;
-    border: 2px solid #171717;
-    transition: .2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-light {
-    background: transparent;
-    color: #171717;
+.hero-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #777169;
 }
 
 /* HERO ART */
 
 .hero-art {
-    min-height: 480px;
-    border-radius: 20px;
+    min-height: 500px;
+    border-radius: 22px;
     background:
         linear-gradient(135deg, transparent 49%, #999 50%, transparent 51%),
         linear-gradient(45deg, transparent 49%, #aaa 50%, transparent 51%),
         #ded9cf;
     background-size: 150px 150px;
     border: 1px solid #c9c1b5;
-    box-shadow: 12px 15px 0 #171717;
+    box-shadow: 13px 15px 0 #171717;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-art::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 65%;
+    border: 4px solid #171717;
+    transform: perspective(500px) rotateY(-18deg) rotateX(8deg);
+    opacity: .8;
+}
+
+.hero-art::after {
+    content: "CUSTOM";
+    position: absolute;
+    bottom: 28px;
+    right: 30px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 4px;
 }
 
 .hero-art-text {
-    background: rgba(244,241,235,.9);
-    padding: 20px;
+    background: rgba(244,241,235,.93);
+    padding: 18px 24px;
     font-weight: 900;
     letter-spacing: 4px;
     transform: rotate(-5deg);
+    z-index: 2;
 }
 
-/* GALLERY */
+/* ================= TRUST BAR ================= */
+
+.trust-bar {
+    background: #171717;
+    color: white;
+    padding: 22px 0;
+}
+
+.trust-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.trust-item {
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.trust-item span {
+    display: block;
+    color: #bcb7ae;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+/* ================= GALLERY ================= */
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .sketch-card {
     background: white;
     border: 1px solid #ddd6ca;
-    border-radius: 16px;
+    border-radius: 17px;
     overflow: hidden;
     transition: .25s;
 }
 
 .sketch-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.09);
 }
 
 .sketch-preview {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 290px;
     overflow: hidden;
     background: #ddd8cf;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
 }
 
 .sketch-preview img {
@@ -235,10 +291,6 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
 }
 
 .watermark {
@@ -246,8 +298,8 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(-25deg);
-    color: rgba(255,255,255,.60);
-    font-size: 28px;
+    color: rgba(255,255,255,.62);
+    font-size: 27px;
     font-weight: 900;
     letter-spacing: 4px;
     white-space: nowrap;
@@ -259,10 +311,9 @@ section {
     position: absolute;
     right: 12px;
     bottom: 10px;
-    color: rgba(255,255,255,.8);
+    color: rgba(255,255,255,.85);
     font-size: 11px;
     font-weight: 900;
-    letter-spacing: 1px;
     pointer-events: none;
     text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 }
@@ -272,39 +323,84 @@ section {
 }
 
 .sketch-info h3 {
-    font-size: 20px;
+    font-size: 21px;
     margin-bottom: 5px;
 }
 
 .sketch-info p {
     color: #777169;
     font-size: 14px;
+    min-height: 43px;
+}
+
+.card-bottom {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .price {
-    margin-top: 12px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 900;
 }
 
-/* HOW IT WORKS */
+.small-order {
+    padding: 10px 13px;
+    background: #171717;
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* ================= WHAT I DRAW ================= */
+
+.draw-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.draw-card {
+    background: white;
+    border: 1px solid #ddd6ca;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.draw-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.draw-card h3 {
+    margin-bottom: 7px;
+}
+
+.draw-card p {
+    color: #6d6962;
+    font-size: 13px;
+}
+
+/* ================= HOW IT WORKS ================= */
 
 .steps {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .step {
     background: white;
     border: 1px solid #ddd6ca;
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 17px;
+    padding: 30px;
 }
 
 .step-number {
-    width: 45px;
-    height: 45px;
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,45 +419,54 @@ section {
     color: #6d6962;
 }
 
-/* PRICING */
+/* ================= PRICING ================= */
 
 .pricing {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    align-items: start;
 }
 
 .plan {
     background: white;
     border: 1px solid #ddd6ca;
-    border-radius: 16px;
+    border-radius: 17px;
     padding: 30px;
+    position: relative;
 }
 
 .plan.featured {
-    border: 2px solid #171717;
-    transform: translateY(-8px);
+    border: 3px solid #171717;
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.08);
 }
 
 .popular {
     display: inline-block;
     background: #171717;
     color: white;
-    padding: 6px 10px;
+    padding: 6px 11px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 }
 
 .plan h3 {
-    font-size: 23px;
+    font-size: 24px;
+}
+
+.plan-description {
+    color: #777169;
+    font-size: 13px;
+    margin-top: 5px;
 }
 
 .amount {
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 900;
-    margin: 12px 0 20px;
+    margin: 13px 0 20px;
 }
 
 .plan ul {
@@ -370,22 +475,26 @@ section {
 }
 
 .plan li {
-    margin: 10px 0;
+    margin: 11px 0;
 }
 
 .plan .btn {
     width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
-/* ORDER */
+/* ================= ORDER ================= */
+
+.order-section {
+    padding-top: 60px;
+}
 
 .order-box {
     background: #171717;
     color: white;
-    border-radius: 20px;
-    padding: 45px;
+    border-radius: 23px;
+    padding: 50px;
 }
 
 .order-box .section-title {
@@ -396,17 +505,21 @@ section {
     color: #c6c2ba;
 }
 
-.order-form {
-    max-width: 700px;
+.order-layout {
     display: grid;
-    gap: 14px;
+    grid-template-columns: 1fr .7fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.order-form {
+    display: grid;
+    gap: 13px;
 }
 
 .order-form label {
-    display: block;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-weight: 800;
+    font-size: 13px;
 }
 
 .order-form input,
@@ -419,11 +532,19 @@ section {
     outline: none;
     background: white;
     color: #171717;
+    font-size: 15px;
 }
 
 .order-form textarea {
-    min-height: 140px;
+    min-height: 130px;
     resize: vertical;
+}
+
+.order-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 .submit-button {
@@ -434,23 +555,104 @@ section {
     color: #171717;
     font-weight: 900;
     cursor: pointer;
-    transition: .2s;
+    font-size: 15px;
 }
 
-.submit-button:hover {
-    transform: translateY(-2px);
+.whatsapp-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: white;
+    border-radius: 9px;
+    font-weight: 900;
+    padding: 15px;
 }
 
-/* WHATSAPP */
+.order-info {
+    background: #242424;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.order-info h3 {
+    margin-bottom: 15px;
+}
+
+.order-info p {
+    color: #bbb7b0;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.order-info ul {
+    list-style: none;
+    color: #ddd9d2;
+    font-size: 14px;
+}
+
+.order-info li {
+    margin: 12px 0;
+}
+
+/* ================= FAQ ================= */
+
+.faq {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #ddd6ca;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.faq-item p {
+    color: #6d6962;
+    font-size: 14px;
+}
+
+/* ================= FINAL CTA ================= */
+
+.final-cta {
+    text-align: center;
+    background: #ded9cf;
+    border-radius: 22px;
+    padding: 65px 25px;
+    border: 1px solid #c9c1b5;
+}
+
+.final-cta h2 {
+    font-size: clamp(35px, 6vw, 60px);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+}
+
+.final-cta p {
+    color: #625e58;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+/* ================= FLOATING WHATSAPP ================= */
 
 .whatsapp {
     position: fixed;
-    right: 22px;
-    bottom: 22px;
+    right: 20px;
+    bottom: 20px;
     z-index: 999;
     background: #25D366;
     color: white;
-    padding: 14px 18px;
+    padding: 14px 19px;
     border-radius: 50px;
     font-weight: 900;
     box-shadow: 0 8px 25px rgba(0,0,0,.2);
@@ -461,7 +663,7 @@ section {
     transform: scale(1.05);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer {
     border-top: 1px solid #ddd6ca;
@@ -471,7 +673,7 @@ footer {
     font-size: 14px;
 }
 
-/* NOTIFICATION */
+/* ================= NOTIFICATION ================= */
 
 .notification {
     position: fixed;
@@ -485,6 +687,7 @@ footer {
     opacity: 0;
     transition: .3s;
     z-index: 2000;
+    text-align: center;
 }
 
 .notification.show {
@@ -492,9 +695,9 @@ footer {
     opacity: 1;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
-@media (max-width:800px) {
+@media (max-width: 850px) {
 
     .menu-button {
         display: block;
@@ -503,7 +706,7 @@ footer {
     .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 68px;
         left: 0;
         right: 0;
         background: #f4f1eb;
@@ -519,17 +722,21 @@ footer {
 
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 55px;
+        padding-top: 50px;
     }
 
     .hero-art {
-        min-height: 330px;
+        min-height: 350px;
     }
 
     .gallery,
     .steps,
     .pricing {
         grid-template-columns: 1fr;
+    }
+
+    .draw-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .plan.featured {
@@ -540,14 +747,59 @@ footer {
         padding: 28px;
     }
 
+    .order-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .faq {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-items {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 0 18px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .draw-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
     .watermark {
-        font-size: 21px;
+        font-size: 20px;
     }
 }
 </style>
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
 <nav class="navbar">
@@ -559,9 +811,10 @@ footer {
 </button>
 
 <ul class="nav-links" id="navLinks">
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#how">How it works</a></li>
+<li><a href="#gallery">My Work</a></li>
+<li><a href="#how">How It Works</a></li>
 <li><a href="#prices">Prices</a></li>
+<li><a href="#faq">FAQ</a></li>
 <li><a href="#order">Order</a></li>
 </ul>
 
@@ -570,60 +823,93 @@ footer {
 
 <main>
 
+<!-- ================= HERO ================= -->
+
 <section>
 <div class="container hero">
 
 <div>
 
 <span class="tag">
-ARCHITECTURAL ART • CUSTOM SKETCHES
+CUSTOM ARCHITECTURAL ART
 </span>
 
 <h1>
-Ideas drawn
-<br>
-into reality.
+Your idea.<br>
+My sketch.
 </h1>
 
 <p>
-Detailed hand-drawn architectural sketches,
-two-point perspective drawings and custom
-designs made for people who want something unique.
+Turn your dream house, room or building into a
+hand-drawn architectural sketch made specially for you.
 </p>
 
 <div class="buttons">
 
 <a href="#order" class="btn">
-Order a sketch
+✏️ Order My Sketch
 </a>
 
 <a href="#gallery" class="btn btn-light">
-See my work
+See My Work
 </a>
 
+</div>
+
+<div class="hero-note">
+✓ Custom designs &nbsp; • &nbsp; ✓ Hand-drawn &nbsp; • &nbsp; ✓ Starting at $5
 </div>
 
 </div>
 
 <div class="hero-art">
+
 <div class="hero-art-text">
-YOUR SKETCH
+YOUR IDEA
 </div>
+
 </div>
 
 </div>
 </section>
+
+<!-- ================= TRUST ================= -->
+
+<div class="trust-bar">
+
+<div class="container trust-items">
+
+<div class="trust-item">
+✏️ HAND-DRAWN
+<span>Made from scratch</span>
+</div>
+
+<div class="trust-item">
+🏠 CUSTOM DESIGN
+<span>Made for your idea</span>
+</div>
+
+<div class="trust-item">
+💵 FROM $5
+<span>Affordable packages</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= GALLERY ================= -->
 
 <section id="gallery">
 
 <div class="container">
 
 <h2 class="section-title">
-Featured sketches
+See my work
 </h2>
 
 <p class="section-subtitle">
-Preview my architectural artwork.
+These are examples of the style and detail you can order.
 </p>
 
 <div class="gallery">
@@ -632,8 +918,7 @@ Preview my architectural artwork.
 
 <div class="sketch-preview">
 <img src="sketch1-preview.jpg"
-alt="Modern Villa architectural sketch"
-draggable="false">
+alt="Modern Villa architectural sketch">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -645,24 +930,31 @@ PREVIEW • © 2026
 </div>
 
 <div class="sketch-info">
-
 <h3>Modern Villa</h3>
 
 <p>
 Detailed two-point perspective architectural drawing.
 </p>
 
+<div class="card-bottom">
 <div class="price">$10</div>
 
+<a href="#order"
+class="small-order"
+data-package="Detailed — $10">
+ORDER
+</a>
 </div>
+</div>
+
 </article>
+
 
 <article class="sketch-card">
 
 <div class="sketch-preview">
 <img src="sketch2-preview.jpg"
-alt="Luxury Interior architectural sketch"
-draggable="false">
+alt="Luxury Interior architectural sketch">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -674,24 +966,31 @@ PREVIEW • © 2026
 </div>
 
 <div class="sketch-info">
-
 <h3>Luxury Interior</h3>
 
 <p>
 Detailed interior perspective drawing.
 </p>
 
+<div class="card-bottom">
 <div class="price">$10</div>
 
+<a href="#order"
+class="small-order"
+data-package="Detailed — $10">
+ORDER
+</a>
 </div>
+</div>
+
 </article>
+
 
 <article class="sketch-card">
 
 <div class="sketch-preview">
 <img src="sketch3-preview.jpg"
-alt="Dream House architectural sketch"
-draggable="false">
+alt="Dream House architectural sketch">
 
 <div class="watermark">
 GHANDOUR SKETCHES
@@ -703,21 +1002,76 @@ PREVIEW • © 2026
 </div>
 
 <div class="sketch-info">
-
 <h3>Dream House</h3>
 
 <p>
 Custom house concept drawn by hand.
 </p>
 
+<div class="card-bottom">
 <div class="price">$15</div>
 
+<a href="#order"
+class="small-order"
+data-package="Detailed — $10">
+ORDER
+</a>
 </div>
+</div>
+
 </article>
 
 </div>
+
 </div>
 </section>
+
+<!-- ================= WHAT I DRAW ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+What can I draw?
+</h2>
+
+<p class="section-subtitle">
+If you can describe it, I can turn it into a sketch.
+</p>
+
+<div class="draw-grid">
+
+<div class="draw-card">
+<div class="draw-icon">🏠</div>
+<h3>Houses</h3>
+<p>Modern houses, villas, dream homes and exterior concepts.</p>
+</div>
+
+<div class="draw-card">
+<div class="draw-icon">🛋️</div>
+<h3>Interiors</h3>
+<p>Rooms, living spaces, bedrooms and interior perspectives.</p>
+</div>
+
+<div class="draw-card">
+<div class="draw-icon">🏢</div>
+<h3>Buildings</h3>
+<p>Architectural concepts, buildings and urban sketches.</p>
+</div>
+
+<div class="draw-card">
+<div class="draw-icon">📐</div>
+<h3>Perspective</h3>
+<p>Two-point perspective drawings and detailed compositions.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
 
 <section id="how">
 
@@ -728,53 +1082,41 @@ How it works
 </h2>
 
 <p class="section-subtitle">
-Getting a custom sketch is simple.
+Ordering your custom sketch takes just a few steps.
 </p>
 
 <div class="steps">
 
 <div class="step">
-
 <div class="step-number">1</div>
-
-<h3>Send your idea</h3>
-
+<h3>Tell me your idea</h3>
 <p>
-Tell me what you want drawn or send
-a reference photo.
+Describe what you want or send me a reference photo through WhatsApp.
 </p>
-
 </div>
 
 <div class="step">
-
 <div class="step-number">2</div>
-
 <h3>I draw it</h3>
-
 <p>
-Your idea is turned into a detailed
-hand-drawn architectural sketch.
+I create your custom hand-drawn architectural sketch.
 </p>
-
 </div>
 
 <div class="step">
-
 <div class="step-number">3</div>
-
-<h3>Receive your artwork</h3>
-
+<h3>Receive it</h3>
 <p>
-Receive your finished drawing and
-a digital copy.
+You receive your finished artwork and a digital copy.
 </p>
-
 </div>
 
 </div>
+
 </div>
 </section>
+
+<!-- ================= PRICES ================= -->
 
 <section id="prices">
 
@@ -785,7 +1127,7 @@ Simple pricing
 </h2>
 
 <p class="section-subtitle">
-Choose the level of detail you want.
+Pick the package that matches the level of detail you want.
 </p>
 
 <div class="pricing">
@@ -794,27 +1136,39 @@ Choose the level of detail you want.
 
 <h3>Starter</h3>
 
+<p class="plan-description">
+Perfect for a simple idea.
+</p>
+
 <div class="amount">$5</div>
 
 <ul>
 <li>✓ Simple architectural sketch</li>
 <li>✓ A4 drawing</li>
 <li>✓ Digital photo</li>
+<li>✓ Custom concept</li>
 </ul>
 
-<a href="#order" class="btn">
+<a href="#order"
+class="btn package-button"
+data-package="Starter — $5">
 Choose Starter
 </a>
 
 </div>
 
+
 <div class="plan featured">
 
 <span class="popular">
-MOST POPULAR
+⭐ MOST POPULAR
 </span>
 
 <h3>Detailed</h3>
+
+<p class="plan-description">
+The best choice for most orders.
+</p>
 
 <div class="amount">$10</div>
 
@@ -823,17 +1177,25 @@ MOST POPULAR
 <li>✓ A4 drawing</li>
 <li>✓ High-quality digital copy</li>
 <li>✓ Extra perspective details</li>
+<li>✓ More complex design</li>
 </ul>
 
-<a href="#order" class="btn">
+<a href="#order"
+class="btn package-button"
+data-package="Detailed — $10">
 Choose Detailed
 </a>
 
 </div>
 
+
 <div class="plan">
 
 <h3>Premium</h3>
+
+<p class="plan-description">
+For complex, highly detailed drawings.
+</p>
 
 <div class="amount">$20</div>
 
@@ -842,49 +1204,67 @@ Choose Detailed
 <li>✓ Extra architectural details</li>
 <li>✓ High-quality digital copy</li>
 <li>✓ Maximum detail</li>
+<li>✓ More advanced composition</li>
 </ul>
 
-<a href="#order" class="btn">
+<a href="#order"
+class="btn package-button"
+data-package="Premium — $20">
 Choose Premium
 </a>
 
 </div>
 
 </div>
+
 </div>
 </section>
 
-<section id="order">
+<!-- ================= ORDER ================= -->
+
+<section id="order" class="order-section">
 
 <div class="container">
 
 <div class="order-box">
 
 <h2 class="section-title">
-Order a custom sketch
+Ready to order?
 </h2>
 
 <p class="section-subtitle">
-Tell me what you want drawn and I'll get back to you.
+Tell me what you want drawn. You can order directly through WhatsApp.
 </p>
+
+<div class="order-layout">
 
 <form class="order-form" id="orderForm">
 
-<label for="name">Your name</label>
+<label for="name">
+Your name
+</label>
 
-<input id="name"
+<input
+id="name"
 type="text"
 placeholder="Your name"
 required>
 
-<label for="email">Your email</label>
 
-<input id="email"
+<label for="email">
+Your email
+</label>
+
+<input
+id="email"
 type="email"
 placeholder="your@email.com"
 required>
 
-<label for="package">Package</label>
+
+<label for="package">
+Choose a package
+</label>
 
 <select id="package">
 
@@ -894,25 +1274,147 @@ required>
 
 </select>
 
+
 <label for="idea">
 What should I draw?
 </label>
 
-<textarea id="idea"
+<textarea
+id="idea"
 placeholder="Example: A modern two-story house with large windows, stairs and a garage..."
 required></textarea>
 
-<button type="submit" class="submit-button">
-Send Order Request
+
+<div class="order-buttons">
+
+<button
+type="submit"
+class="submit-button">
+✉️ Email Order
 </button>
+
+<a
+href="#"
+id="whatsappOrder"
+class="whatsapp-submit">
+📲 Order on WhatsApp
+</a>
+
+</div>
 
 </form>
 
+
+<div class="order-info">
+
+<h3>What happens after I order?</h3>
+
+<p>
+I'll review your request and contact you to confirm the details before starting.
+</p>
+
+<ul>
+<li>✓ We discuss your idea</li>
+<li>✓ Package and price are confirmed</li>
+<li>✓ I create the sketch</li>
+<li>✓ You receive the finished artwork</li>
+</ul>
+
+<br>
+
+<p>
+<strong>Not sure which package?</strong><br>
+Choose Detailed — $10 and we can discuss it together.
+</p>
+
 </div>
+
+</div>
+
+</div>
+
 </div>
 </section>
 
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+FAQ
+</h2>
+
+<p class="section-subtitle">
+A few quick answers before you order.
+</p>
+
+<div class="faq">
+
+<div class="faq-item">
+<h3>Can I send you a reference photo?</h3>
+<p>
+Yes. Send a photo, drawing or description of what you want through WhatsApp.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Are the sketches hand-drawn?</h3>
+<p>
+Yes. The artwork is created as a hand-drawn architectural sketch.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I request a house I designed myself?</h3>
+<p>
+Yes. You can describe your own house or send a reference and request a custom version.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Which package should I choose?</h3>
+<p>
+Detailed ($10) is the best starting point for most architectural sketches.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="final-cta">
+
+<h2>
+Have an idea?
+</h2>
+
+<p>
+Don't just imagine it. Turn it into a hand-drawn sketch.
+Send me your idea and let's create it.
+</p>
+
+<a href="#order" class="btn">
+✏️ Start My Sketch
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
 class="whatsapp"
@@ -920,13 +1422,14 @@ id="whatsappButton"
 href="#"
 target="_blank"
 rel="noopener">
-WhatsApp Me
+📲 WhatsApp Me
 </a>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-© <span id="year"></span>
-Ghandour Sketches
+© <span id="year"></span> Ghandour Sketches
 
 <br>
 
@@ -940,7 +1443,7 @@ Order request prepared!
 
 <script>
 
-/* MOBILE MENU */
+/* ================= MOBILE MENU ================= */
 
 const menuButton =
 document.getElementById("menuButton");
@@ -952,9 +1455,8 @@ menuButton.addEventListener("click", function() {
     navLinks.classList.toggle("open");
 });
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(function(link) {
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
 
     link.addEventListener("click", function() {
         navLinks.classList.remove("open");
@@ -963,13 +1465,128 @@ document
 });
 
 
-/* YEAR */
+/* ================= YEAR ================= */
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
 
 
-/* ORDER FORM */
+/* ================= WHATSAPP ================= */
+
+const whatsappNumber =
+"96181835567";
+
+
+function createWhatsAppMessage() {
+
+    const name =
+    document.getElementById("name").value.trim();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const packageName =
+    document.getElementById("package").value;
+
+    const idea =
+    document.getElementById("idea").value.trim();
+
+    let message =
+    "Hi! I'd like to order a custom architectural sketch.%0A%0A";
+
+    message +=
+    "Name: " +
+    encodeURIComponent(name) +
+    "%0A";
+
+    message +=
+    "Email: " +
+    encodeURIComponent(email) +
+    "%0A";
+
+    message +=
+    "Package: " +
+    encodeURIComponent(packageName) +
+    "%0A%0A";
+
+    message +=
+    "What I'd like drawn:%0A" +
+    encodeURIComponent(idea);
+
+    return "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message;
+}
+
+
+document
+.getElementById("whatsappOrder")
+.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    const form =
+    document.getElementById("orderForm");
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    window.open(
+        createWhatsAppMessage(),
+        "_blank"
+    );
+
+});
+
+
+/* FLOATING WHATSAPP */
+
+document
+.getElementById("whatsappButton")
+.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    window.open(
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+            "Hi! I'd like to order a custom architectural sketch."
+        ),
+        "_blank"
+    );
+
+});
+
+
+/* ================= PACKAGE BUTTONS ================= */
+
+document
+.querySelectorAll(".package-button, .small-order")
+.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const selectedPackage =
+        this.getAttribute("data-package");
+
+        if (selectedPackage) {
+
+            document.getElementById("package").value =
+            selectedPackage;
+
+        }
+
+    });
+
+});
+
+
+/* ================= EMAIL ORDER ================= */
 
 const orderForm =
 document.getElementById("orderForm");
@@ -998,13 +1615,14 @@ orderForm.addEventListener("submit", function(event) {
 
     const subject =
     encodeURIComponent(
-        "New Sketch Order - " + packageName
+        "New Sketch Order - " +
+        packageName
     );
 
     const body =
     encodeURIComponent(
 
-        "NEW SKETCH ORDER\n\n" +
+        "NEW GHANDOUR SKETCHES ORDER\n\n" +
 
         "Customer name: " +
         name +
@@ -1044,103 +1662,7 @@ orderForm.addEventListener("submit", function(event) {
 });
 
 
-/* WHATSAPP */
-
-/* Your Lebanese WhatsApp number */
-
-const whatsappNumber =
-"96181835567";
-
-const whatsappMessage =
-encodeURIComponent(
-    "Hi! I'd like to order a custom architectural sketch."
-);
-
-document.getElementById("whatsappButton").href =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-whatsappMessage;
-
-
-/* ANTI-COPY PROTECTION */
-
-document.addEventListener("contextmenu", function(event) {
-    event.preventDefault();
-});
-
-document.addEventListener("dragstart", function(event) {
-
-    if (event.target.tagName === "IMG") {
-        event.preventDefault();
-    }
-
-});
-
-document.addEventListener("selectstart", function(event) {
-
-    if (
-        event.target.tagName === "IMG" ||
-        event.target.closest(".sketch-preview")
-    ) {
-        event.preventDefault();
-    }
-
-});
-
-
-/* PREVENT COMMON SHORTCUTS */
-
-document.addEventListener("keydown", function(event) {
-
-    const key =
-    event.key.toLowerCase();
-
-    if (
-        (event.ctrlKey || event.metaKey) &&
-        key === "s"
-    ) {
-        event.preventDefault();
-    }
-
-    if (
-        (event.ctrlKey || event.metaKey) &&
-        key === "u"
-    ) {
-        event.preventDefault();
-    }
-
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        key === "i"
-    ) {
-        event.preventDefault();
-    }
-
-    if (event.key === "F12") {
-        event.preventDefault();
-    }
-
-});
-
-
-/* PROTECT PREVIEW IMAGES */
-
-document
-.querySelectorAll(".sketch-preview img")
-.forEach(function(image) {
-
-    image.setAttribute("draggable", "false");
-
-    image.addEventListener("dragstart", function(event) {
-        event.preventDefault();
-    });
-
-});
-
-
-/* SMOOTH SCROLL */
+/* ================= SMOOTH SCROLL ================= */
 
 document
 .querySelectorAll('a[href^="#"]')
