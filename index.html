@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -817,6 +816,164 @@ footer {
     opacity: .8;
 }
 
+/* ================= CHATBOT STYLES ================= */
+
+#gsk-ai-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: none;
+    background: #171717;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    transition: .25s;
+}
+
+#gsk-ai-button:hover {
+    transform: scale(1.08);
+}
+
+#gsk-ai-chat {
+    position: fixed;
+    right: 22px;
+    bottom: 95px;
+    width: 350px;
+    max-width: calc(100vw - 30px);
+    height: 500px;
+    background: #f4f1eb;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+    overflow: hidden;
+    z-index: 9998;
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ddd6ca;
+}
+
+#gsk-ai-header {
+    background: #171717;
+    color: white;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#gsk-ai-logo {
+    width: 42px;
+    height: 42px;
+    background: white;
+    color: #171717;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+#gsk-ai-title {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+#gsk-ai-status {
+    font-size: 12px;
+    opacity: .7;
+    margin-top: 3px;
+}
+
+#gsk-ai-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.gsk-message {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.gsk-message.bot {
+    justify-content: flex-start;
+}
+
+.gsk-message.user {
+    justify-content: flex-end;
+}
+
+.gsk-bubble {
+    max-width: 82%;
+    padding: 11px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.gsk-message.bot .gsk-bubble {
+    background: white;
+    color: #171717;
+    border-bottom-left-radius: 4px;
+}
+
+.gsk-message.user .gsk-bubble {
+    background: #171717;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+#gsk-ai-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #ddd6ca;
+}
+
+#gsk-ai-input {
+    flex: 1;
+    border: 1px solid #ddd6ca;
+    border-radius: 12px;
+    padding: 11px;
+    outline: none;
+    font-size: 14px;
+}
+
+#gsk-ai-send {
+    border: none;
+    background: #171717;
+    color: white;
+    width: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.gsk-quick-buttons {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.gsk-quick {
+    border: 1px solid #ddd6ca;
+    background: white;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.gsk-quick:hover {
+    background: #eeeae3;
+}
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 850px) {
@@ -934,6 +1091,18 @@ footer {
 
     .watermark {
         font-size: 20px;
+    }
+
+    #gsk-ai-chat {
+        right: 10px;
+        bottom: 85px;
+        width: calc(100vw - 20px);
+        height: 70vh;
+    }
+
+    #gsk-ai-button {
+        right: 15px;
+        bottom: 15px;
     }
 }
 </style>
@@ -1494,6 +1663,98 @@ rel="noopener">
 📲 WhatsApp Me
 </a>
 
+<!-- GHANDOUR AI CHATBOT BUTTON -->
+
+<button
+    id="gsk-ai-button"
+    onclick="gskToggleChat()"
+    aria-label="Open Ghandour AI">
+    ✦
+</button>
+
+<!-- GHANDOUR AI CHATBOT WINDOW -->
+
+<div id="gsk-ai-chat">
+
+    <div id="gsk-ai-header">
+
+        <div id="gsk-ai-logo">
+            GS
+        </div>
+
+        <div>
+            <div id="gsk-ai-title">
+                Ghandour AI
+            </div>
+
+            <div id="gsk-ai-status">
+                Ghandour Sketches Assistant
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="gsk-ai-messages">
+
+        <div class="gsk-message bot">
+
+            <div class="gsk-bubble">
+
+                👋 Hi! I'm the Ghandour Sketches assistant.
+
+                <br><br>
+
+                I can help you with prices, sketches,
+                ordering and contact information.
+
+                <div class="gsk-quick-buttons">
+
+                    <button
+                        class="gsk-quick"
+                        onclick="gskQuick('How much does a sketch cost?')">
+                        Prices
+                    </button>
+
+                    <button
+                        class="gsk-quick"
+                        onclick="gskQuick('What do you draw?')">
+                        Services
+                    </button>
+
+                    <button
+                        class="gsk-quick"
+                        onclick="gskQuick('How do I order?')">
+                        How to order
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="gsk-ai-input-area">
+
+        <input
+            id="gsk-ai-input"
+            type="text"
+            placeholder="Ask me something..."
+            onkeydown="if(event.key==='Enter') gskSendMessage()">
+
+        <button
+            id="gsk-ai-send"
+            onclick="gskSendMessage()">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
 <!-- FOOTER -->
 
 <footer>
@@ -1505,10 +1766,6 @@ rel="noopener">
 Professional architectural art.
 
 </footer>
-
-<div class="notification" id="notification">
-Order request prepared!
-</div>
 
 <!-- GALLERY VIEWER -->
 
@@ -1900,8 +2157,295 @@ document.querySelectorAll(
 
 });
 
+
+/* ================= GHANDOUR AI CHATBOT ================= */
+
+const gskAnswers = [
+
+    {
+        keywords: [
+            "price",
+            "prices",
+            "cost",
+            "how much",
+            "pricing",
+            "expensive",
+            "dollar"
+        ],
+
+        answer:
+            "Our current prices are:<br><br>" +
+            "✏️ Concept Sketch — $15<br>" +
+            "🏛️ Professional Sketch — $25<br>" +
+            "✨ Photorealistic Rendering — $40<br><br>" +
+            "Every order is custom-made based on your idea."
+    },
+
+
+    {
+        keywords: [
+            "what do you draw",
+            "what can you draw",
+            "services",
+            "draw",
+            "drawing",
+            "sketch types"
+        ],
+
+        answer:
+            "Ghandour Sketches creates custom architectural artwork, including:<br><br>" +
+            "🏠 Dream houses<br>" +
+            "🏛️ Buildings<br>" +
+            "🛋️ Interior designs<br>" +
+            "🏙️ Towns and streets<br>" +
+            "📐 1-point, 2-point and 3-point perspective<br>" +
+            "✨ Custom architectural concepts."
+    },
+
+
+    {
+        keywords: [
+            "house",
+            "home",
+            "villa",
+            "mansion"
+        ],
+
+        answer:
+            "Yes! 🏠 Ghandour Sketches can create custom sketches of houses, villas, mansions and other architectural ideas."
+    },
+
+
+    {
+        keywords: [
+            "order",
+            "ordering",
+            "buy",
+            "purchase",
+            "get a sketch"
+        ],
+
+        answer:
+            "Ordering is simple!<br><br>" +
+            "1️⃣ Tell us what you want drawn.<br>" +
+            "2️⃣ Choose your package.<br>" +
+            "3️⃣ We create your custom sketch.<br>" +
+            "4️⃣ You receive your finished artwork.<br><br>" +
+            "You can order through the Order section or contact us on WhatsApp."
+    },
+
+
+    {
+        keywords: [
+            "whatsapp",
+            "phone",
+            "contact",
+            "message"
+        ],
+
+        answer:
+            "You can contact Ghandour Sketches on WhatsApp at:<br><br>" +
+            "📱 +961 81 835 567<br><br>" +
+            "Email:<br>" +
+            "📧 k.rami.ghandour1@gmail.com"
+    },
+
+
+    {
+        keywords: [
+            "email",
+            "gmail",
+            "mail"
+        ],
+
+        answer:
+            "Our email is:<br><br>" +
+            "📧 k.rami.ghandour1@gmail.com"
+    },
+
+
+    {
+        keywords: [
+            "perspective",
+            "2 point",
+            "two point",
+            "3 point",
+            "three point",
+            "1 point",
+            "one point"
+        ],
+
+        answer:
+            "Yes! 📐 Ghandour Sketches creates 1-point, 2-point and 3-point perspective architectural sketches."
+    },
+
+
+    {
+        keywords: [
+            "custom",
+            "personal",
+            "my idea",
+            "my design"
+        ],
+
+        answer:
+            "Yes! 🎨 Ghandour Sketches specializes in custom artwork based on your own idea. Describe your dream design and we can turn it into a hand-drawn architectural sketch."
+    },
+
+
+    {
+        keywords: [
+            "hello",
+            "hi",
+            "hey",
+            "good morning",
+            "good evening"
+        ],
+
+        answer:
+            "Hey! 👋 Welcome to Ghandour Sketches. How can I help you?"
+    },
+
+
+    {
+        keywords: [
+            "who are you",
+            "what are you",
+            "assistant"
+        ],
+
+        answer:
+            "I'm the Ghandour Sketches website assistant 🤖. I can answer basic questions about sketches, prices, services and ordering."
+    }
+
+];
+
+
+function gskToggleChat() {
+
+    const chat =
+        document.getElementById("gsk-ai-chat");
+
+    if (chat.style.display === "flex") {
+
+        chat.style.display = "none";
+
+    } else {
+
+        chat.style.display = "flex";
+
+        document
+            .getElementById("gsk-ai-input")
+            .focus();
+    }
+}
+
+
+function gskQuick(question) {
+
+    document.getElementById("gsk-ai-input").value =
+        question;
+
+    gskSendMessage();
+}
+
+
+function gskAddMessage(text, type) {
+
+    const messages =
+        document.getElementById("gsk-ai-messages");
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "gsk-message " + type;
+
+    const bubble =
+        document.createElement("div");
+
+    bubble.className =
+        "gsk-bubble";
+
+    bubble.innerHTML =
+        text;
+
+    message.appendChild(bubble);
+
+    messages.appendChild(message);
+
+    messages.scrollTop =
+        messages.scrollHeight;
+}
+
+
+function gskFindAnswer(question) {
+
+    const q =
+        question.toLowerCase().trim();
+
+    for (const item of gskAnswers) {
+
+        for (const keyword of item.keywords) {
+
+            if (q.includes(keyword)) {
+
+                return item.answer;
+
+            }
+        }
+    }
+
+    return null;
+}
+
+
+function gskSendMessage() {
+
+    const input =
+        document.getElementById("gsk-ai-input");
+
+    const question =
+        input.value.trim();
+
+    if (!question) return;
+
+    gskAddMessage(
+        question,
+        "user"
+    );
+
+    input.value = "";
+
+
+    setTimeout(function() {
+
+        const answer =
+            gskFindAnswer(question);
+
+        if (answer) {
+
+            gskAddMessage(
+                answer,
+                "bot"
+            );
+
+        } else {
+
+            gskAddMessage(
+                "Sorry, I didn't understand that. 😔<br><br>" +
+                "Please email us at " +
+                "<b>k.rami.ghandour1@gmail.com</b> " +
+                "and we'll be happy to help.",
+                "bot"
+            );
+
+        }
+
+    }, 500);
+}
+
 </script>
 
 </body>
 </html>
-```
